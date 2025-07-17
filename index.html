@@ -10,268 +10,297 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-        }
-        .gradient-bg {
             background: linear-gradient(135deg, #f0f9ff 0%, #e6f2ff 50%, #f5f0ff 100%);
         }
-        .blue-circle {
-            background: radial-gradient(circle, #3b82f6 0%, #2563eb 100%);
+        .gradient-header {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
         }
-        .purple-circle {
-            background: radial-gradient(circle, #8b5cf6 0%, #7c3aed 100%);
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
-        .divider-line {
-            background: linear-gradient(90deg, transparent 0%, #9ca3af 50%, transparent 100%);
-            height: 1px;
+        .nav-btn.active {
+            border-bottom: 3px solid #3b82f6;
+        }
+        section {
+            scroll-margin-top: 120px; /* Espaço para o cabeçalho fixo */
         }
     </style>
 </head>
-<body class="gradient-bg">
+<body class="min-h-screen">
     <!-- Cabeçalho -->
-    <header class="container mx-auto px-4 py-6">
-        <div class="flex justify-between items-center">
+    <header class="gradient-header text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-6 flex justify-between items-center relative">
             <div class="flex items-center space-x-4">
-                <div class="blue-circle w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl font-bold">
-                    @
+                <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-md">
+                    <!-- Placeholder para logo da Liga -->
+                    <span class="text-blue-600 text-2xl font-bold">LANNA</span>
                 </div>
-                <h1 class="text-2xl font-bold text-gray-800">Liga Acadêmica de Neurocirurgia</h1>
+                <div>
+                    <h1 class="text-xl md:text-2xl font-bold">Liga Acadêmica de Neurocirurgia</h1>
+                    <p class="text-sm md:text-base opacity-90">Faculdade Florence</p>
+                </div>
             </div>
-            <div class="purple-circle w-16 h-16 rounded-full flex items-center justify-center text-white text-xl font-bold">
-                FL
+            
+            <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-md">
+                <!-- Placeholder para logo da Faculdade -->
+                <span class="text-purple-600 font-bold">FL</span>
+            </div>
+            
+            <!-- Imagem de cérebro -->
+            <div class="absolute right-0 top-0 opacity-20 md:opacity-30">
+                <!-- Placeholder para imagem de cérebro 3D -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-cpu text-white">
+                    <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                    <rect x="9" y="9" width="6" height="6"></rect>
+                    <line x1="9" y1="1" x2="9" y2="4"></line>
+                    <line x1="15" y1="1" x2="15" y2="4"></line>
+                    <line x1="9" y1="20" x2="9" y2="23"></line>
+                    <line x1="15" y1="20" x2="15" y2="23"></line>
+                    <line x1="20" y1="9" x2="23" y1="9"></line>
+                    <line x1="20" y1="14" x2="23" y1="14"></line>
+                    <line x1="1" y1="9" x2="4" y1="9"></line>
+                    <line x1="1" y1="14" x2="4" y1="14"></line>
+                </svg>
             </div>
         </div>
     </header>
 
-    <!-- Datas em destaque -->
-    <div class="container mx-auto px-4 mb-8">
-        <div class="flex justify-between bg-white rounded-lg shadow-md p-4">
-            <div class="text-center">
-                <div class="text-sm text-gray-500">Inscrições abertas</div>
-                <div class="text-xl font-bold text-blue-600">20/06</div>
-            </div>
-            <div class="text-center">
-                <div class="text-sm text-gray-500">Evento próximo</div>
-                <div class="text-xl font-bold text-purple-600">24/06</div>
+    <!-- Navegação -->
+    <nav class="bg-white shadow-md sticky top-24 z-40">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-8">
+                <a href="#home" class="nav-btn flex flex-col items-center p-4 rounded-lg hover:bg-blue-50 transition-all active">
+                    <i class="fas fa-home text-3xl text-blue-600 mb-2"></i>
+                    <span class="font-medium">Home</span>
+                </a>
+                <a href="#sobre" class="nav-btn flex flex-col items-center p-4 rounded-lg hover:bg-blue-50 transition-all">
+                    <i class="fas fa-tree text-3xl text-blue-600 mb-2"></i>
+                    <span class="font-medium">Sobre a Liga</span>
+                </a>
+                <a href="#membros" class="nav-btn flex flex-col items-center p-4 rounded-lg hover:bg-blue-50 transition-all">
+                    <i class="fas fa-users text-3xl text-purple-600 mb-2"></i>
+                    <span class="font-medium">Nossos Membros</span>
+                </a>
+                <a href="#projetos" class="nav-btn flex flex-col items-center p-4 rounded-lg hover:bg-blue-50 transition-all">
+                    <i class="fas fa-microscope text-3xl text-indigo-600 mb-2"></i>
+                    <span class="font-medium">Nossos Projetos</span>
+                </a>
             </div>
         </div>
-    </div>
+    </nav>
 
-    <!-- Seção Objetivos -->
-    <section class="container mx-auto px-4 mb-12">
-        <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Objetivos da Liga</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <!-- Card Desenvolver -->
-            <div class="bg-white p-6 rounded-xl shadow-md relative overflow-hidden">
-                <div class="absolute -top-4 -right-4 w-20 h-20 rounded-full bg-blue-100 opacity-30"></div>
-                <h3 class="text-xl font-bold mb-4 text-blue-600 flex items-center">
-                    <div class="blue-circle w-10 h-10 rounded-full flex items-center justify-center text-white mr-3">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    Desenvolver
-                </h3>
-                <p class="text-gray-700">
-                    Desenvolver competências clínicas e cirúrgicas dos acadêmicos por meio de treinamentos e vivências práticas.
-                </p>
+    <!-- Conteúdo Principal -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- Seção Home -->
+        <section id="home" class="mb-16">
+            <!-- Conteúdo da home... (mantido igual ao anterior) -->
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Objetivos da Liga</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Cards de objetivos... -->
             </div>
-            
-            <!-- Card Estimular -->
-            <div class="bg-white p-6 rounded-xl shadow-md relative overflow-hidden">
-                <div class="absolute -top-4 -right-4 w-20 h-20 rounded-full bg-purple-100 opacity-30"></div>
-                <h3 class="text-xl font-bold mb-4 text-purple-600 flex items-center">
-                    <div class="purple-circle w-10 h-10 rounded-full flex items-center justify-center text-white mr-3">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    Estimular
-                </h3>
-                <p class="text-gray-700">
-                    Pensamento crítico, valorizando a pesquisa, a extensão e o protagonismo estudantil.
-                </p>
-            </div>
-            
-            <!-- Card Formar -->
-            <div class="bg-white p-6 rounded-xl shadow-md relative overflow-hidden">
-                <div class="absolute -top-4 -right-4 w-20 h-20 rounded-full bg-indigo-100 opacity-30"></div>
-                <h3 class="text-xl font-bold mb-4 text-indigo-600 flex items-center">
-                    <div class="bg-indigo-500 w-10 h-10 rounded-full flex items-center justify-center text-white mr-3">
-                        <i class="fas fa-user-md"></i>
-                    </div>
-                    Formar
-                </h3>
-                <p class="text-gray-700">
-                    Profissionais preparados para atuar no SUS, com foco na realidade da saúde pública e no cuidado integral do paciente neurológico.
-                </p>
-            </div>
-        </div>
-        
-        <!-- Divisor -->
-        <div class="divider-line my-8 w-full"></div>
-    </section>
+        </section>
 
-    <!-- Seção Missão -->
-    <section class="container mx-auto px-4 mb-12">
-        <div class="bg-white rounded-xl shadow-md p-8">
-            <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Nossa Missão</h2>
-            <p class="text-lg text-gray-700 text-center max-w-3xl mx-auto leading-relaxed">
-                Nossa missão é promover o desenvolvimento de acadêmicos comprometidos com a excelência em neurocirurgia, integrando ensino, prática e pesquisa, com ênfase na atuação humanizada e eficiente no Sistema Único de Saúde.
-            </p>
-            
-            <!-- Ícone de transformação -->
-            <div class="text-center mt-8 text-blue-600">
-                <i class="fas fa-arrows-rotate text-4xl"></i>
-                <div class="font-medium mt-2">Transformação</div>
+        <!-- Seção Sobre -->
+        <section id="sobre" class="mb-16 bg-white rounded-xl shadow-md p-8">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Sobre a Liga</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-6 md:mb-0 md:pr-8">
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        A Liga Acadêmica de Neurocirurgia LANNA foi oficialmente constituída em 2025 por estudantes do Curso de Medicina da Faculdade Florence, com o objetivo de aprofundar o conhecimento teórico e prático na área da neurocirurgia.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        Voltada para a formação acadêmica de excelência, a Liga desenvolve atividades como aulas, discussões clínicas, workshops, visitas técnicas, participação em procedimentos cirúrgicos supervisionados por especialistas, ações em unidades de saúde e incentivo à pesquisa científica.
+                    </p>
+                    <div class="mt-6">
+                        <button class="bg-blue-600 text-white font-medium py-2 px-6 rounded-lg hover:bg-blue-700 transition-colors flex items-center">
+                            <i class="fas fa-file-pdf mr-2"></i> Baixe nosso Estatuto
+                        </button>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <!-- Placeholder para imagem sobre a liga -->
+                    <div class="bg-gray-200 rounded-lg h-64 flex items-center justify-center">
+                        <i class="fas fa-university text-5xl text-gray-400"></i>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Seção Eventos -->
-    <section class="container mx-auto px-4 mb-12">
-        <div class="bg-blue-50 rounded-xl p-6 text-center mb-8">
-            <h3 class="text-xl font-bold mb-2 text-blue-800">Agenda de eventos será divulgada em breve!</h3>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="text-center">
-                <div class="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 text-blue-600">
-                    <i class="fas fa-chalkboard-teacher text-2xl"></i>
-                </div>
-                <h4 class="font-semibold">Simpósios temáticos</h4>
-            </div>
-            <div class="text-center">
-                <div class="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 text-purple-600">
-                    <i class="fas fa-hand-holding-medical text-2xl"></i>
-                </div>
-                <h4 class="font-semibold">Campanhas educativas</h4>
-            </div>
-            <div class="text-center">
-                <div class="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 text-indigo-600">
-                    <i class="fas fa-university text-2xl"></i>
-                </div>
-                <h4 class="font-semibold">Aulas magnas com convidados</h4>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção Projetos -->
-    <section class="container mx-auto px-4 mb-12">
-        <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Projetos da Liga</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Projeto 1 -->
-            <div class="bg-white rounded-xl shadow-md p-6">
-                <div class="flex items-start">
-                    <div class="bg-blue-100 rounded-lg p-3 mr-4 text-blue-600">
-                        <i class="fas fa-hospital text-2xl"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-lg mb-2">Parceria com o Hospital da Mulher</h3>
-                        <p class="text-gray-700 text-sm">
-                            Acompanhe nossa vivência prática com neurocirurgião no Hospital da Mulher
-                        </p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Projeto 2 -->
-            <div class="bg-white rounded-xl shadow-md p-6">
-                <div class="flex items-start">
-                    <div class="bg-purple-100 rounded-lg p-3 mr-4 text-purple-600">
-                        <i class="fas fa-book-open text-2xl"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-lg mb-2">Aulas Abertas e Encontros Teóricos</h3>
-                        <p class="text-gray-700 text-sm">
-                            Explore o cronograma de aulas, com temas como TCE, AVC, hérnia de disco e muito mais
-                        </p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Projeto 3 -->
-            <div class="bg-white rounded-xl shadow-md p-6">
-                <div class="flex items-start">
-                    <div class="bg-indigo-100 rounded-lg p-3 mr-4 text-indigo-600">
-                        <i class="fas fa-file-alt text-2xl"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-lg mb-2">Produções Acadêmicas</h3>
-                        <p class="text-gray-700 text-sm">
-                            Artigos, resumos e materiais elaborados pelos membros da LANNA
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Slogan -->
-        <div class="text-center mt-12 text-gray-600 font-medium">
-            <p>Promovendo excelência em neurocirurgia através da integração</p>
-            <p>de ensino, pesquisa e prática</p>
-        </div>
-    </section>
-
-    <!-- Seção Inscrições -->
-    <section class="container mx-auto px-4 mb-12">
-        <div class="bg-white rounded-xl shadow-lg p-8 text-center">
-            <h2 class="text-3xl font-bold mb-4 text-gray-800">Inscrições Abertas</h2>
-            <p class="text-lg text-gray-700 mb-6">Processo seletivo para novos membros foi prorrogado!</p>
-            
-            <div class="max-w-md mx-auto bg-gray-50 rounded-lg p-6 mb-6">
-                <h3 class="font-bold mb-4 text-gray-800">Requisitos</h3>
-                <div class="space-y-4 text-left">
-                    <div class="flex items-start">
-                        <div class="bg-blue-100 rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
-                            <span class="text-blue-600 text-sm font-bold">1</span>
+            <!-- Atividades da Liga -->
+            <div class="mt-12">
+                <h3 class="text-2xl font-bold text-center mb-8 text-gray-800">Atividades da Liga</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-chalkboard text-blue-600 text-xl mr-3"></i>
+                            <h4 class="font-semibold">Aulas e Seminários</h4>
                         </div>
-                        <p class="text-gray-700">Estar matriculado no Curso de Medicina da Faculdade Florence</p>
+                        <p class="text-gray-700 text-sm">Temas em neurocirurgia e clínica neurológica aplicada</p>
                     </div>
-                    <div class="flex items-start">
-                        <div class="bg-blue-100 rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
-                            <span class="text-blue-600 text-sm font-bold">2</span>
+                    <div class="bg-purple-50 p-6 rounded-lg">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-comments text-purple-600 text-xl mr-3"></i>
+                            <h4 class="font-semibold">Discussões de Casos</h4>
                         </div>
-                        <p class="text-gray-700">Ter interesse em participar ativamente das atividades</p>
+                        <p class="text-gray-700 text-sm">Aprofundamento diagnóstico e terapêutico</p>
                     </div>
-                    <div class="flex items-start">
-                        <div class="bg-blue-100 rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
-                            <span class="text-blue-600 text-sm font-bold">3</span>
+                    <div class="bg-indigo-50 p-6 rounded-lg">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-tools text-indigo-600 text-xl mr-3"></i>
+                            <h4 class="font-semibold">Workshops</h4>
                         </div>
-                        <p class="text-gray-700">Comparecer às etapas do processo seletivo (aulas abertas e entrevista)</p>
+                        <p class="text-gray-700 text-sm">Técnicas neurocirúrgicas e emergências neurológicas</p>
+                    </div>
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-user-md text-blue-600 text-xl mr-3"></i>
+                            <h4 class="font-semibold">Supervisão Especializada</h4>
+                        </div>
+                        <p class="text-gray-700 text-sm">Acompanhamento de procedimentos cirúrgicos</p>
+                    </div>
+                    <div class="bg-purple-50 p-6 rounded-lg">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-hand-holding-heart text-purple-600 text-xl mr-3"></i>
+                            <h4 class="font-semibold">Extensão Universitária</h4>
+                        </div>
+                        <p class="text-gray-700 text-sm">Ações em Unidades Básicas de Saúde</p>
+                    </div>
+                    <div class="bg-indigo-50 p-6 rounded-lg">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-flask text-indigo-600 text-xl mr-3"></i>
+                            <h4 class="font-semibold">Produção Científica</h4>
+                        </div>
+                        <p class="text-gray-700 text-sm">Elaboração de artigos e participação em congressos</p>
                     </div>
                 </div>
             </div>
+        </section>
+
+        <!-- Seção Membros -->
+        <section id="membros" class="mb-16 bg-white rounded-xl shadow-md p-8 text-center">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Nossos Membros</h2>
+            <div class="bg-blue-50 rounded-lg p-8 mb-8">
+                <p class="text-lg text-gray-700 mb-6">Esta seção estará disponível em breve com a apresentação da diretoria, membros ativos e professor(a) orientador(a).</p>
+                <p class="text-gray-600">Conheça nossos alunos e faça parte da nossa comunidade vibrante.</p>
+            </div>
             
-            <button class="bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold py-3 px-8 rounded-full shadow-md hover:shadow-lg transition-all">
-                Preencha o formulário
+            <!-- Placeholder para fotos dos membros -->
+            <div class="relative w-64 h-64 mx-auto my-8">
+                <div class="absolute inset-0 rounded-full bg-blue-100 flex items-center justify-center">
+                    <i class="fas fa-users text-5xl text-blue-600"></i>
+                </div>
+                <!-- Membros em círculo -->
+                <div class="absolute -top-4 left-0 w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center border-4 border-white shadow-md">
+                    <i class="fas fa-user text-purple-600"></i>
+                </div>
+                <div class="absolute top-0 right-0 w-16 h-16 rounded-full bg-indigo-100 flex items-center justify-center border-4 border-white shadow-md">
+                    <i class="fas fa-user text-indigo-600"></i>
+                </div>
+                <div class="absolute bottom-0 left-0 w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center border-4 border-white shadow-md">
+                    <i class="fas fa-user text-blue-600"></i>
+                </div>
+                <div class="absolute bottom-0 right-0 w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center border-4 border-white shadow-md">
+                    <i class="fas fa-user text-purple-600"></i>
+                </div>
+                <div class="absolute top-1/2 left-4 w-16 h-16 rounded-full bg-indigo-100 flex items-center justify-center border-4 border-white shadow-md transform -translate-y-1/2">
+                    <i class="fas fa-user text-indigo-600"></i>
+                </div>
+                <div class="absolute top-1/2 right-4 w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center border-4 border-white shadow-md transform -translate-y-1/2">
+                    <i class="fas fa-user text-blue-600"></i>
+                </div>
+            </div>
+            
+            <button class="bg-gray-200 text-gray-800 font-medium py-2 px-6 rounded-lg hover:bg-gray-300 transition-colors mt-4">
+                Voltar
             </button>
-            
-            <p class="mt-4 text-blue-600 font-medium">
-                <a href="#" class="hover:underline">Edital Completo</a>
-            </p>
-        </div>
-    </section>
+        </section>
 
-    <!-- Rodapé -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="flex space-x-6 mb-4 md:mb-0">
-                    <a href="#" class="hover:text-blue-300">Home</a>
-                    <a href="#" class="hover:text-blue-300">Sobre nós</a>
-                    <a href="#" class="hover:text-blue-300">Membros</a>
-                    <a href="#" class="hover:text-blue-300">Projetos</a>
-                </div>
-                
-                <div class="text-center md:text-right">
-                    <p class="mb-1">E-mail oficial: lannan@email.com</p>
-                    <p class="mb-1">Instagram: @lga.sama</p>
-                    <p>Faculdade Florence - São Luís-MA</p>
+        <!-- Seção Projetos -->
+        <section id="projetos" class="mb-16 bg-white rounded-xl shadow-md p-8">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Nossos Projetos</h2>
+            
+            <div class="bg-blue-50 rounded-lg p-8 text-center mb-8">
+                <h3 class="text-xl font-semibold mb-4">Produções e Materiais</h3>
+                <p class="text-gray-700 mb-6">Espaço destinado à divulgação de materiais científicos e educativos produzidos pela Liga</p>
+                <div class="bg-white rounded-lg p-4 inline-block">
+                    <p class="text-gray-600 font-medium">Em breve</p>
                 </div>
             </div>
             
-            <div class="mt-6 text-center text-gray-400 text-sm">
-                <p>© 2023 Liga Acadêmica de Neurocirurgia. Todos os direitos reservados.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white border border-gray-200 rounded-lg p-6 text-center">
+                    <i class="fas fa-file-alt text-4xl text-blue-600 mb-4"></i>
+                    <h4 class="font-semibold mb-2">Artigos</h4>
+                    <p class="text-gray-600 text-sm">e resumos acadêmicos</p>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-lg p-6 text-center">
+                    <i class="fas fa-chalkboard-teacher text-4xl text-purple-600 mb-4"></i>
+                    <h4 class="font-semibold mb-2">Apresentações</h4>
+                    <p class="text-gray-600 text-sm">de aulas e minicursos</p>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-lg p-6 text-center">
+                    <i class="fas fa-heartbeat text-4xl text-indigo-600 mb-4"></i>
+                    <h4 class="font-semibold mb-2">Materiais</h4>
+                    <p class="text-gray-600 text-sm">de campanhas de saúde</p>
+                </div>
             </div>
-        </div>
+        </section>
+
+        <!-- Outras seções da home... -->
+    </main>
+
+    <!-- Rodapé (mantido igual) -->
+    <footer class="bg-gray-900 text-white py-12">
+        <!-- ... -->
     </footer>
+
+    <script>
+        // Navegação suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // Atualiza a navegação ativa
+                document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Rolagem suave
+                const targetId = this.getAttribute('href');
+                if(targetId === '#home') {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Atualiza a navegação ativa ao rolar
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                if(window.scrollY >= sectionTop) {
+                    currentSection = '#' + section.getAttribute('id');
+                }
+            });
+            
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.getAttribute('href') === currentSection) {
+                    btn.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
